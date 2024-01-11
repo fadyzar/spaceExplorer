@@ -11,23 +11,12 @@ const userSchema = new mongoose.Schema({
     unique: [true, "This email is already in use"],
     match: [/^\S+@\S+\.\S+$/, "Please add a valid email"],
   },
-  cash: {
-    type: Number,
-    required: [true, "Must provide how much cash do you have!"],
-
-  },
-
-  creditAmount: {
-    type: Number,
-    required: [true, "Must provide how much money do you have in your credit card!"],
-
-  },
-
-  creditLimit: {
-    type: Number,
-    required: [true, "Must provide your limited credit card"],
+  password:{
+    type: String,
+    require: [true, "Must provide password"],
 
   }
+  
 
  
 });

@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev-server": "node --watch server.js",
+    "dev-server": "nodemon server.js",
     "start-server": "node server.js",
     "dev-client": "cd client && npm run dev",
     "start-client": "cd client && npm start"
