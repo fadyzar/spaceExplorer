@@ -1,0 +1,56 @@
+/* Main.css */
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .main-container {
+    display: flex;
+    height: 100vh;
+    transition: margin-left 0.3s; /* Add smooth transition for sidebar animation */
+  }
+  
+  .sidebar-open {
+    margin-left: 250px; /* Adjust the width of the open sidebar */
+  }
+  
+  .toggle-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    padding: 20px;
+    background: url('https://wallpapercave.com/wp/wp3182859.jpg') center/cover;
+    color: #ffffff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .main-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .main-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Add more styles as needed */
+  
+  /* Sidebar styling (styles to be added based on your Sidebar component) */
+  

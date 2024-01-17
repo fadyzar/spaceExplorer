@@ -1,0 +1,49 @@
+dialog{
+    width: 500px;
+    height: 250px;
+    position: fixed;
+    border-radius: 20px;
+    opacity: 0.97;
+    text-align: center;
+    line-height: 1.7;
+    border: none;
+    letter-spacing: 2px;
+    padding-top: 50px;
+    top: 32%;
+    left: 40%;
+    background-color: #222831;
+}
+
+dialog::backdrop{
+    background-color: black;
+    opacity: 0.6;
+}
+dialog h3{
+    color: greenyellow;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+dialog .close-dialog , dialog .book-error-close-dialog{
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    color: #00ADB5;
+    background-color: #333;
+    font-weight: bold;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    border: none;
+    width: 200px;
+    margin-left: 0%;
+}
+
+dialog .book-error-close-dialog{
+    margin-left: 0;
+}
+
+.close-dialog:hover , .book-error-close-dialog:hover{
+    background-color: #5e6c819b;
+    color: wheat;
+    
+}
