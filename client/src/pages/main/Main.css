@@ -18,10 +18,11 @@ body {
   
   .toggle-btn {
     position: fixed;
+    
     top: 20px;
     left: 20px;
     z-index: 2;
-    background: #333;
+    background: 0000;
     color: #fff;
     border: none;
     padding: 10px;
@@ -50,7 +51,131 @@ body {
     margin-bottom: 20px;
   }
   
-  /* Add more styles as needed */
+
   
-  /* Sidebar styling (styles to be added based on your Sidebar component) */
   
+
+  .apod-container {
+    max-width: 80%;
+    /* overflow: hidden; */
+    overflow: hidden;
+    margin-top: -140px;
+    margin-left: 90px;
+  }
+  
+  .apod-container img {
+    max-width: 100%;
+    height: auto; 
+    margin-bottom: 15px;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .pOfExp {
+    max-height: 100px; /* Set your desired maximum height */
+    overflow-y:scroll;
+  }
+
+
+
+  .asteroids-container {
+    margin-top: 20px;
+    overflow: auto; /* Add this line to enable vertical scrolling */
+  }
+  
+  .asteroids-table {
+    width: 100%;
+    
+    border-collapse: collapse;
+  }
+  
+  .asteroids-table th,
+  .asteroids-table td {
+   color: bisque;
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .asteroids-table th {
+    background-color: black;
+  }
+  
+
+
+/* donki style */
+
+.donki-container {
+  margin-top: 20px;
+  max-height: 400px; 
+  overflow-y: auto; 
+  overflow-x: auto; 
+  margin-left: 40px;
+}
+
+.donki-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  table-layout: fixed; /* Fix the layout of the table */
+}
+
+.donki-table th, .donki-table td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: left;
+  white-space: nowrap; /* Prevent text wrapping */
+  
+}
+
+.messageBodyScroll{
+  overflow: scroll;
+  
+}
+
+.donki-table th {
+  background-color: black;
+}
+
+.donki-table a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.donki-table a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.donki-container::-webkit-scrollbar {
+  width: 1px;
+}
+
+.messageBodyScroll::-webkit-scrollbar{
+  width: 1px;
+}
+
+.donki-container::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+.donki-container::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 6px;
+}
+
+.donki-container::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.toggle-btn{
+  background-color: 0000;;
+}
+

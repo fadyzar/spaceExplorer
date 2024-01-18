@@ -1,3 +1,4 @@
+// Sidebar.jsx
 import React, { useState } from "react";
 import "tailwindcss/tailwind.css";
 import "./Sidebar.css";
@@ -5,7 +6,7 @@ import { useLogInContext } from "../context/LoginContext";
 import { useNavigate } from "react-router-dom";
 import LogoutIcon from "@mui/icons-material/Logout";
 
-const Sidebar = () => {
+const Sidebar = ({ onToggleApod,onShowAsteroidsClick,showDonki  }) => {
   const [submenuHidden, setSubmenuHidden] = useState(false);
   const [sidebarHidden, setSidebarHidden] = useState(false);
   const { setCurrentUser, currentUser } = useLogInContext();
@@ -52,10 +53,6 @@ const Sidebar = () => {
             <span className="text-[15px] ml-4 text-gray-200 font-bold">
               Logout <LogoutIcon className="logout-icon" />
             </span>
-
-            <span
-              className={`text-sm ${submenuHidden ? "rotate-0" : ""}`}
-            ></span>
           </div>
         </div>
         <div
@@ -66,26 +63,8 @@ const Sidebar = () => {
             <span className="text-[15px] ml-4 text-gray-200 font-bold">
               Chatbox
             </span>
-
-            <span
-              className={`text-sm ${submenuHidden ? "rotate-0" : ""}`}
-            ></span>
           </div>
         </div>
-        {/* <div
-          className="sidebar-container p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
-          onClick={handleLogOut}
-        >
-          <div className="flex justify-between w-full items-center">
-            <span className="text-[15px] ml-4 text-gray-200 font-bold">
-              Logout <LogoutIcon className="logout-icon" />
-            </span>
-
-            <span
-              className={`text-sm ${submenuHidden ? "rotate-0" : ""}`}
-            ></span>
-          </div>
-        </div> */}
         <div
           className={`text-left text-sm mt-2 w-4/5 mx-auto text-gray-200 font-bold ${
             submenuHidden ? "hidden" : ""
@@ -101,8 +80,56 @@ const Sidebar = () => {
             Friends
           </h1>
         </div>
+        <div
+          className="sidebar-container p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
+          onClick={onToggleApod}
+        >
+          <div className="flex justify-between w-full items-center">
+            <span className="text-[15px] ml-4 text-gray-200 font-bold">
+              Toggle APOD
+            </span>
+          </div>
+        </div>
+         {/* Show Asteroids button */}
+      <div
+        className="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
+        onClick={onShowAsteroidsClick}
+      >
+        <div className="flex justify-between w-full items-center">
+          <span className="text-[15px] ml-4 text-gray-200 font-bold">
+            Show Asteroids
+          </span>
+          <span
+            className={`text-sm ${submenuHidden ? "rotate-0" : ""}`}
+          ></span>
+        </div>
+      </div>
+      
+       
+      <div
+        className="sidebar-container p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
+        onClick={showDonki} // Update this line to call showDonki function
+      >
+        <div className="flex justify-between w-full items-center">
+          <span className="text-[15px] ml-4 text-gray-200 font-bold">
+            Show DONKI
+          </span>
+        </div>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
       </div>
     </div>
+    
+   
+ 
+    
   );
 };
 
