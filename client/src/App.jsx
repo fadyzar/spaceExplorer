@@ -4,16 +4,21 @@ import Main from "./pages/main/Main";
 import LogIn from "./components/login/LogIn.jsx";
 import SignUp from "./components/signup/SignUp.jsx";
 import { LoginProvider } from "./components/context/LoginContext.jsx";
+import Explore from "./pages/explore/Explore.jsx";
+
 
 function App() {
 
   return (
     <>
     <LoginProvider>
+      
       <Routes>
         <Route path="/" element={<LogIn />}></Route> 
          <Route path="/signup" element={<SignUp/>}></Route>
          <Route path="/mainPage" element={<Main/>}></Route>
+         <Route path="/explore" element={<Explore/>}></Route>
+
 
 
        

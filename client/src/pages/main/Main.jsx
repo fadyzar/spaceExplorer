@@ -1,7 +1,10 @@
 // Main.jsx
 import React, { useState, useEffect } from 'react';
 import Sidebar from '../../components/sidebar/Sidebar';
+import Explore from '../explore/Explore';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 import './Main.css';
 
 const Main = () => {
@@ -9,10 +12,11 @@ const Main = () => {
   const [isApodVisible, setApodVisible] = useState(false);
   const [showAsteroids, setShowAsteroids] = useState(false);
   const [isDonkiVisible, setDonkiVisible] = useState(false);
+  const [isNasaLibraryVisible, setNasaLibraryVisible] = useState(false); // New state
   const [donkiData, setDonkiData] = useState(null);
-  
   const [asteroidsData, setAsteroidsData] = useState(null);
   const [apodData, setApodData] = useState(null);
+  const [nasaLibraryData, setNasaLibraryData] = useState(null);
 
   useEffect(() => {
     if (isApodVisible) {
@@ -34,8 +38,12 @@ const Main = () => {
         })
         .catch((error) => console.error('Error fetching DONKI data:', error));
       }
+      if (isNasaLibraryVisible) {
+       
+        fetchDataFromNasaLibrary();
+      }
     
-  }, [isApodVisible, isDonkiVisible]);
+  }, [isApodVisible, isDonkiVisible,isNasaLibraryVisible]);
 
   const toggleSidebar = () => {
     setSidebarOpen(!isSidebarOpen);
@@ -45,6 +53,36 @@ const Main = () => {
     setDonkiVisible(!isDonkiVisible);
   };
 
+ 
+  const toggleNasaLibrary = () => {
+    setNasaLibraryVisible(!isNasaLibraryVisible);
+  };
+
+  const fetchDataFromNasaLibrary = async () => {
+    try {
+      // Use the CORS Anywhere proxy to bypass CORS issues
+      const nasaLibraryUrl = 'http://localhost:8080/https://images-api.nasa.gov/search?q=moon&media_type=image';
+
+      const response = await axios.get(nasaLibraryUrl, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Api-Key': '1OCCdbzFTuOT37Ji7FJu354z1rtY2CyWXdXfsQPM',
+        },
+      });
+
+      console.log('Request:', response.config);
+      console.log('Response:', response.data);
+
+      // Handle the response data as needed
+      // ...
+
+    } catch (error) {
+      console.error('Error fetching NASA Library data:', error);
+
+      // Handle the error (e.g., show a message to the user)
+      // ...
+    }
+  };
 
   const handleShowAsteroidsClick = async () => {
     try {
@@ -100,10 +138,14 @@ const Main = () => {
       <button className="toggle-btn" onClick={toggleSidebar} >
         {isSidebarOpen ? '' : '🌎'}
       </button>
-      {isSidebarOpen && <Sidebar onToggleApod={toggleApod} onShowAsteroidsClick={handleShowAsteroidsClick} showDonki={showDonki}/>}
+      {isSidebarOpen && <Sidebar onToggleApod={toggleApod} onShowAsteroidsClick={handleShowAsteroidsClick} showDonki={showDonki}  onShowNasaLibraryClick={toggleNasaLibrary}/>}
       <div className="main-content">
         <h1>Welcome to Space Explorer</h1>
         <p>Embark on a journey to explore the wonders of the universe!</p>
+         {/* Display Explore page */}
+         <Link to="/explore">
+        <button>Explore Our Galaxy</button>
+      </Link>
 
         {isApodVisible && (
           <div className="apod-container">
@@ -183,6 +225,27 @@ const Main = () => {
   </div>
 )}
 
+
+{/* {isNasaLibraryVisible && nasaLibraryData && (
+    <div className="nasa-library-container">
+      <h2>NASA Image and Video Library</h2>
+      <div className="nasa-library-content">
+        {nasaLibraryData.map((item) => (
+          <div key={item.data[0].nasa_id}>
+            <img src={item.links[0].href} alt={item.data[0].title} />
+            <p>{item.data[0].title}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  )} */}
+
+{isNasaLibraryVisible && nasaLibraryData && (
+          <div className="nasa-library-container">
+            <h2>NASA Image and Video Library</h2>
+            {/* Display NASA Library data as needed */}
+          </div>
+        )}
 
 
           

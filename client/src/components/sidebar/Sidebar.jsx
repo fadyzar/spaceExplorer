@@ -6,7 +6,7 @@ import { useLogInContext } from "../context/LoginContext";
 import { useNavigate } from "react-router-dom";
 import LogoutIcon from "@mui/icons-material/Logout";
 
-const Sidebar = ({ onToggleApod,onShowAsteroidsClick,showDonki  }) => {
+const Sidebar = ({ onToggleApod,onShowAsteroidsClick,showDonki,onShowNasaLibraryClick  }) => {
   const [submenuHidden, setSubmenuHidden] = useState(false);
   const [sidebarHidden, setSidebarHidden] = useState(false);
   const { setCurrentUser, currentUser } = useLogInContext();
@@ -116,7 +116,21 @@ const Sidebar = ({ onToggleApod,onShowAsteroidsClick,showDonki  }) => {
           </span>
         </div>
       </div>
+
+
+      <div
+        className="sidebar-container p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
+        onClick={onShowNasaLibraryClick}
+      >
+        <div className="flex justify-between w-full items-center">
+          <span className="text-[15px] ml-4 text-gray-200 font-bold">
+            Show NASA Library
+          </span>
+        </div>
+      </div>
       
+
+   
       
       
       
