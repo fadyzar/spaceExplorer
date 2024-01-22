@@ -4,6 +4,8 @@ import Sidebar from '../../components/sidebar/Sidebar';
 import Explore from '../explore/Explore';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import sideBarIcon from './images/menu.png';
+
 
 import './Main.css';
 
@@ -17,6 +19,7 @@ const Main = () => {
   const [asteroidsData, setAsteroidsData] = useState(null);
   const [apodData, setApodData] = useState(null);
   const [nasaLibraryData, setNasaLibraryData] = useState(null);
+  
 
   useEffect(() => {
     if (isApodVisible) {
@@ -136,16 +139,13 @@ const Main = () => {
   return (
     <div className={`main-container ${isSidebarOpen ? 'sidebar-open' : ''}`}>
       <button className="toggle-btn" onClick={toggleSidebar} >
-        {isSidebarOpen ? '' : '🌎'}
+        {isSidebarOpen ? '' : <img className='sideBarIcon' src={sideBarIcon} alt="sideBarIcon" />}
       </button>
       {isSidebarOpen && <Sidebar onToggleApod={toggleApod} onShowAsteroidsClick={handleShowAsteroidsClick} showDonki={showDonki}  onShowNasaLibraryClick={toggleNasaLibrary}/>}
       <div className="main-content">
         <h1>Welcome to Space Explorer</h1>
         <p>Embark on a journey to explore the wonders of the universe!</p>
-         {/* Display Explore page */}
-         <Link to="/explore">
-        <button>Explore Our Galaxy</button>
-      </Link>
+        
 
         {isApodVisible && (
           <div className="apod-container">

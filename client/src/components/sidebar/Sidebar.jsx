@@ -5,6 +5,7 @@ import "./Sidebar.css";
 import { useLogInContext } from "../context/LoginContext";
 import { useNavigate } from "react-router-dom";
 import LogoutIcon from "@mui/icons-material/Logout";
+import { Link } from 'react-router-dom';
 
 const Sidebar = ({ onToggleApod,onShowAsteroidsClick,showDonki,onShowNasaLibraryClick  }) => {
   const [submenuHidden, setSubmenuHidden] = useState(false);
@@ -25,6 +26,13 @@ const Sidebar = ({ onToggleApod,onShowAsteroidsClick,showDonki,onShowNasaLibrary
     setCurrentUser();
     navigate("/");
   }
+  function showPlanets() {
+    
+    
+    navigate("/explore");
+  }
+
+
 
   return (
     <div className="bg-blue-600 sidebar-container">
@@ -55,31 +63,21 @@ const Sidebar = ({ onToggleApod,onShowAsteroidsClick,showDonki,onShowNasaLibrary
             </span>
           </div>
         </div>
+        
+       
+      
+
         <div
-          className="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
-          onClick={toggleDropdown}
+          className="sidebar-container p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
+          onClick={showPlanets}
         >
           <div className="flex justify-between w-full items-center">
             <span className="text-[15px] ml-4 text-gray-200 font-bold">
-              Chatbox
+              Planets
             </span>
           </div>
         </div>
-        <div
-          className={`text-left text-sm mt-2 w-4/5 mx-auto text-gray-200 font-bold ${
-            submenuHidden ? "hidden" : ""
-          }`}
-        >
-          <h1 className="cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-1">
-            Cases for
-          </h1>
-          <h1 className="cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-1">
-            Personal
-          </h1>
-          <h1 className="cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-1">
-            Friends
-          </h1>
-        </div>
+       
         <div
           className="sidebar-container p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
           onClick={onToggleApod}

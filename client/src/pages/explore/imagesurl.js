@@ -10,7 +10,16 @@ neptune: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMSEBIQDxI
 
 
 
-
+const planetImages = {
+  mercury: 'path/to/mercury-image.jpg',
+  venus: 'path/to/venus-image.jpg',
+  earth: 'path/to/earth-image.jpg',
+  mars: 'path/to/mars-image.jpg',
+  jupiter: 'path/to/jupiter-image.jpg',
+  saturn: 'path/to/saturn-image.jpg',
+  uranus: 'path/to/uranus-image.jpg',
+  neptune: 'path/to/neptune-image.jpg',
+};
 
 
 const planetImages = {
