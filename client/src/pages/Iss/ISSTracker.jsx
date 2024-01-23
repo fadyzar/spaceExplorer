@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { useNavigate } from 'react-router-dom';
+import { MapContainer, TileLayer, Marker, Popup, ZoomControl } from 'react-leaflet';
 import axios from 'axios';
 import './iss.css';
+import 'leaflet/dist/leaflet.css';
+import homeIcon from '../explore/exploreImage/home.png';
+
 
 const ISSTracker = () => {
   const [issLocation, setISSLocation] = useState(null);
   const [crewDetails, setCrewDetails] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchISSLocation = async () => {
@@ -39,15 +44,30 @@ const ISSTracker = () => {
     return () => clearInterval(intervalId);
   }, []);
 
+  const handleGoHome = () => {
+    
+    navigate('/mainPage'); 
+  };
+
   return (
     <div className="iss-tracker-container">
+      <div className="home-icon" onClick={handleGoHome}>
+        <img src={homeIcon} alt="Home" />
+      </div>
+        
       <h2>International Space Station (ISS) Tracker</h2>
+      
 
       <div className="iss-map-container">
         {issLocation && (
-          <MapContainer center={[issLocation.latitude, issLocation.longitude]} zoom={3} className="iss-map">
-            
-            <TileLayer
+          <MapContainer
+            center={[issLocation.latitude, issLocation.longitude]}
+            zoom={3}
+            style={{ height: '100%', width: '100%' }}
+            className="iss-map"
+            zoomControl={false} // Disable default zoom control
+          >
+             <TileLayer
               url={`https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}`}
               attribution='<a href="https://www.mapbox.com/attributions">© Mapbox</a> | <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               id="mapbox/streets-v11" 
@@ -60,6 +80,7 @@ const ISSTracker = () => {
                 Latitude: {issLocation.latitude.toFixed(2)}, Longitude: {issLocation.longitude.toFixed(2)}
               </Popup>
             </Marker>
+            <ZoomControl position="bottomright" /> 
           </MapContainer>
         )}
       </div>

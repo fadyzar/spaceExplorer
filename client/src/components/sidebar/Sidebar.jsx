@@ -32,6 +32,13 @@ const Sidebar = ({ onToggleApod,onShowAsteroidsClick,showDonki,onShowNasaLibrary
     navigate("/explore");
   }
 
+  function showIss() {
+    
+    
+    navigate("/iss");
+  }
+
+
 
 
   return (
@@ -74,6 +81,17 @@ const Sidebar = ({ onToggleApod,onShowAsteroidsClick,showDonki,onShowNasaLibrary
           <div className="flex justify-between w-full items-center">
             <span className="text-[15px] ml-4 text-gray-200 font-bold">
               Planets
+            </span>
+          </div>
+        </div>
+
+        <div
+          className="sidebar-container p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
+          onClick={showIss}
+        >
+          <div className="flex justify-between w-full items-center">
+            <span className="text-[15px] ml-4 text-gray-200 font-bold">
+              ISS Location
             </span>
           </div>
         </div>

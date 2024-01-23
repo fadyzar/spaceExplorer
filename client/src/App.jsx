@@ -5,7 +5,7 @@ import LogIn from "./components/login/LogIn.jsx";
 import SignUp from "./components/signup/SignUp.jsx";
 import { LoginProvider } from "./components/context/LoginContext.jsx";
 import Explore from "./pages/explore/Explore.jsx";
-import ISSTracker from "./pages/ISSTracker.jsx";
+import ISSTracker from "./pages/Iss/ISSTracker.jsx";
 
 
 function App() {
