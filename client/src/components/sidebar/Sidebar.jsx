@@ -38,6 +38,14 @@ const Sidebar = ({ onToggleApod,onShowAsteroidsClick,showDonki,onShowNasaLibrary
     navigate("/iss");
   }
 
+  function spaceXevents(){
+    navigate("/spaceevent")
+  }
+
+  function nasaLibrary(){
+    navigate("/nasalibrary")
+  }
+
 
 
 
@@ -85,6 +93,8 @@ const Sidebar = ({ onToggleApod,onShowAsteroidsClick,showDonki,onShowNasaLibrary
           </div>
         </div>
 
+
+
         <div
           className="sidebar-container p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
           onClick={showIss}
@@ -92,6 +102,28 @@ const Sidebar = ({ onToggleApod,onShowAsteroidsClick,showDonki,onShowNasaLibrary
           <div className="flex justify-between w-full items-center">
             <span className="text-[15px] ml-4 text-gray-200 font-bold">
               ISS Location
+            </span>
+          </div>
+        </div>
+
+        <div
+          className="sidebar-container p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
+          onClick={nasaLibrary}
+        >
+          <div className="flex justify-between w-full items-center">
+            <span className="text-[15px] ml-4 text-gray-200 font-bold">
+            Show NASA Library
+            </span>
+          </div>
+        </div>
+
+        <div
+          className="sidebar-container p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
+          onClick={spaceXevents}
+        >
+          <div className="flex justify-between w-full items-center">
+            <span className="text-[15px] ml-4 text-gray-200 font-bold">
+              SpaceX Events
             </span>
           </div>
         </div>
@@ -134,17 +166,7 @@ const Sidebar = ({ onToggleApod,onShowAsteroidsClick,showDonki,onShowNasaLibrary
       </div>
 
 
-      <div
-        className="sidebar-container p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
-        onClick={onShowNasaLibraryClick}
-      >
-        <div className="flex justify-between w-full items-center">
-          <span className="text-[15px] ml-4 text-gray-200 font-bold">
-            Show NASA Library
-          </span>
-        </div>
-      </div>
-      
+    
 
    
       

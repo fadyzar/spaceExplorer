@@ -1,0 +1,61 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+  }
+  
+  .space-events-calendar {
+    max-width: 100%;
+    
+    padding: 20px;
+    overflow-x: auto;
+    text-align: center;
+    background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/145a4477029515.5c7bcf54cc7f2.png');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .launch-table-container {
+    max-height: 100%;
+    
+    overflow-y: auto;
+  }
+  
+  .launch-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    
+  }
+  
+  .launch-table thead {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .launch-table th,
+  .launch-table td {
+    padding: 15px;
+    text-align: left;
+    color: #ddd;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .launch-table tbody tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .home-icon {
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+
+ 
+  

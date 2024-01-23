@@ -6,6 +6,8 @@ import SignUp from "./components/signup/SignUp.jsx";
 import { LoginProvider } from "./components/context/LoginContext.jsx";
 import Explore from "./pages/explore/Explore.jsx";
 import ISSTracker from "./pages/Iss/ISSTracker.jsx";
+import SpaceEventsCalendar from "./pages/EventsCalendar/SpaceEventsCalendar.jsx";
+import NasaLibraryPage from "./pages/nasaLibrary/nasaLibrary.jsx";
 
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
          <Route path="/mainPage" element={<Main/>}></Route>
          <Route path="/explore" element={<Explore/>}></Route>
          <Route path="/iss" element={<ISSTracker/>}></Route>
+         <Route path="/spaceevent" element={<SpaceEventsCalendar />}></Route>
+         <Route path="/nasalibrary" element={<NasaLibraryPage />}></Route>
 
 
 

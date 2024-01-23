@@ -1,0 +1,50 @@
+/* NasaLibraryPage.css */
+
+.nasa-library-page {
+    max-width: 100%;
+    
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.media-list {
+    display: flex;
+    max-height: 100%;
+    max-width: 100%;
+    background-color: gray;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    overflow-y: auto; /* Add overflow-y property for vertical scrollbar */
+    max-height: 70vh; /* Limit the height to 70% of the viewport height */
+}
+
+.media-item {
+    margin: 10px;
+    text-align: center;
+}
+
+img {
+    width: 200px; /* Set a fixed width */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+img:hover {
+    transform: scale(1.1);
+}
+
+p {
+    font-size: 1em;
+    color: #555;
+    margin-top: 10px;
+}
