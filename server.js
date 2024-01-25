@@ -11,7 +11,7 @@ import forumRouter from "./routes/forumRoutes.js";
 dotenv.config();
 const app = express();
 
-app.use(cors()); // Solving cors
+app.use(cors()); // Solving 
 app.use(express.json()); // Body parser middleware
 
 // User Routes - create user, get users , get single user

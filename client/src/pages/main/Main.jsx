@@ -1,4 +1,4 @@
-// Main.jsx
+
 import React, { useState, useEffect } from 'react';
 import Sidebar from '../../components/sidebar/Sidebar';
 import Explore from '../explore/Explore';
@@ -61,31 +61,31 @@ const Main = () => {
     setNasaLibraryVisible(!isNasaLibraryVisible);
   };
 
-  const fetchDataFromNasaLibrary = async () => {
-    try {
-      // Use the CORS Anywhere proxy to bypass CORS issues
-      const nasaLibraryUrl = 'http://localhost:8080/https://images-api.nasa.gov/search?q=moon&media_type=image';
+  // const fetchDataFromNasaLibrary = async () => {
+  //   try {
+  //     // Use the CORS Anywhere proxy to bypass  issues
+  //     const nasaLibraryUrl = 'http://localhost:8080/https://images-api.nasa.gov/search?q=moon&media_type=image';
 
-      const response = await axios.get(nasaLibraryUrl, {
-        headers: {
-          'Content-Type': 'application/json',
-          'Api-Key': '1OCCdbzFTuOT37Ji7FJu354z1rtY2CyWXdXfsQPM',
-        },
-      });
+  //     const response = await axios.get(nasaLibraryUrl, {
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //         'Api-Key': '1OCCdbzFTuOT37Ji7FJu354z1rtY2CyWXdXfsQPM',
+  //       },
+  //     });
 
-      console.log('Request:', response.config);
-      console.log('Response:', response.data);
+  //     console.log('Request:', response.config);
+  //     console.log('Response:', response.data);
 
-      // Handle the response data as needed
-      // ...
+  //     // Handle the response data as needed
+  //     // ...
 
-    } catch (error) {
-      console.error('Error fetching NASA Library data:', error);
+  //   } catch (error) {
+  //     console.error('Error fetching NASA Library data:', error);
 
-      // Handle the error (e.g., show a message to the user)
-      // ...
-    }
-  };
+  //     // Handle the error (e.g., show a message to the user)
+  //     // ...
+  //   }
+  // };
 
   const handleShowAsteroidsClick = async () => {
     try {
