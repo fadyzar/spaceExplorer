@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import homeIcon from './exploreImage/home.png';
+import Sidebar from '../../components/sidebar/Sidebar';
 
 const Explore = () => {
   const [planets, setPlanets] = useState([]);
@@ -52,6 +53,7 @@ const Explore = () => {
 
   return (
     <div className="explore-background">
+      <Sidebar />
       <br /> <br /><br />
       <div className="explore-container">
       <div className="home-icon" onClick={handleGoHome}>

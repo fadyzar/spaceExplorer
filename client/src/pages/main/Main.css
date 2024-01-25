@@ -1,4 +1,4 @@
-/* Main.css */
+
 body {
     margin: 0;
     padding: 0;
@@ -68,8 +68,9 @@ body {
   }
   
   .apod-container img {
-    max-width: 100%;
-    height: auto; 
+    width: 90%;
+
+    height: 500px; 
     margin-bottom: 15px;
   }
 

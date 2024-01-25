@@ -18,7 +18,7 @@ function LoginProvider({ children }) {
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data));
       setCurrentUser(res.data);
-     
+     navigate('/mainpage')
     } catch (error) {
       setErrMsg(error.response.data.message);
       console.log(error.response.data.message);

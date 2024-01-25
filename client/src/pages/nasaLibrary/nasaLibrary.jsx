@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './NasaLibraryPage.css'; 
 import homeIcon from '../explore/exploreImage/home.png';
+import Sidebar from '../../components/sidebar/Sidebar';
 
 const NasaLibraryPage = () => {
   const [mediaData, setMediaData] = useState([]);
@@ -15,7 +16,7 @@ const NasaLibraryPage = () => {
 
   const fetchDataFromNasaLibrary = async () => {
     try {
-      const response = await axios.get('https://images-api.nasa.gov/search?q=earth');
+      const response = await axios.get('https://images-api.nasa.gov/search?q=venus');
       setMediaData(response.data.collection.items || []); // Ensure mediaData is an array
     } catch (error) {
       console.error('Error fetching NASA Library data:', error);
@@ -30,6 +31,7 @@ const NasaLibraryPage = () => {
 
   return (
     <div className="nasa-library-page">
+      <Sidebar />
           <div className="home-icon" onClick={handleGoHome}>
         <img src={homeIcon} alt="Home" />
       </div>

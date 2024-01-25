@@ -10,8 +10,8 @@
   }
   
   .space-events-calendar {
-    max-width: 100%;
-    
+    max-width: 90%;
+    margin-left: 300px;
     padding: 20px;
     overflow-x: auto;
     text-align: center;

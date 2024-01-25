@@ -1,9 +1,10 @@
-// SpaceEventsCalendar.jsx
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './SpaceEventsCalendar.css'; 
 import { useNavigate } from 'react-router-dom';
 import homeIcon from '../explore/exploreImage/home.png';
+import Sidebar from '../../components/sidebar/Sidebar';
 
 const SpaceEventsCalendar = () => {
   const [launchesData, setLaunchesData] = useState([]);
@@ -20,7 +21,7 @@ const SpaceEventsCalendar = () => {
       setLaunchesData(response.data);
     } catch (error) {
       console.error('Error fetching upcoming launches data:', error);
-      setError(error.message); // Set the error state
+      setError(error.message); 
     }
   };
 
@@ -31,6 +32,7 @@ const SpaceEventsCalendar = () => {
 
   return (
     <div className="space-events-calendar">
+      <Sidebar />
       <div className="home-icon" onClick={handleGoHome}>
         <img src={homeIcon} alt="Home" />
       </div>

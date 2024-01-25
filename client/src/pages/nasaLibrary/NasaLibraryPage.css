@@ -1,8 +1,8 @@
-/* NasaLibraryPage.css */
+
 
 .nasa-library-page {
     max-width: 100%;
-    
+    background-color: gray;
     margin: 0 auto;
     padding: 20px;
 }
@@ -17,12 +17,13 @@ h1 {
 .media-list {
     display: flex;
     max-height: 100%;
-    max-width: 100%;
+    max-width: 80%;
+    margin-left: 300px;
     background-color: gray;
     flex-wrap: wrap;
     justify-content: space-around;
-    overflow-y: auto; /* Add overflow-y property for vertical scrollbar */
-    max-height: 70vh; /* Limit the height to 70% of the viewport height */
+    overflow-y: auto; 
+    max-height: 90vh; 
 }
 
 .media-item {

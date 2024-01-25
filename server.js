@@ -5,6 +5,7 @@ import userRouter from "./routes/userRoutes.js";
 import connectDB from "./config/db.js";
 import errorHandler from "./middlewares/errorMiddleware.js  ";
 
+import forumRouter from "./routes/forumRoutes.js";
 
 
 dotenv.config();
@@ -15,7 +16,7 @@ app.use(express.json()); // Body parser middleware
 
 // User Routes - create user, get users , get single user
 app.use("/api/v1/space", userRouter);
-
+app.use("/api/v1/forum", forumRouter);
 
 app.use(errorHandler); // Error handler middleware <
 

@@ -8,6 +8,7 @@ import Explore from "./pages/explore/Explore.jsx";
 import ISSTracker from "./pages/Iss/ISSTracker.jsx";
 import SpaceEventsCalendar from "./pages/EventsCalendar/SpaceEventsCalendar.jsx";
 import NasaLibraryPage from "./pages/nasaLibrary/nasaLibrary.jsx";
+import Forum from "./pages/forum/forum.jsx";
 
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
          <Route path="/iss" element={<ISSTracker/>}></Route>
          <Route path="/spaceevent" element={<SpaceEventsCalendar />}></Route>
          <Route path="/nasalibrary" element={<NasaLibraryPage />}></Route>
-
+         <Route path="/forum" element={<Forum/>}></Route>
 
 
 
