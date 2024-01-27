@@ -78,7 +78,17 @@
   .home-icon {
     position: absolute;
     top: 10px;
-    right: 10px; /* Adjust the right position as needed */
+    right: 10px; 
     cursor: pointer;
   }
-  
+  @media only screen and (min-width: 768px) {
+    .iss-map-container {
+        height: 400px; 
+    }
+}
+
+@media only screen and (min-width: 768px) {
+  .crew-details li {
+      flex: 0 0 calc(33.33% - 10px); /* Adjusted flex for larger screens */
+  }
+}

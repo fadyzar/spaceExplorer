@@ -98,3 +98,11 @@
   width: 20px;
   height: 20px;
 }
+
+@media only screen and (min-width: 768px) {
+  .forum-container {
+      margin-left: 400px;
+      margin-top: 40px;
+      max-height: calc(100vh - 80px); /* Adjust the max height based on your layout */
+  }
+}

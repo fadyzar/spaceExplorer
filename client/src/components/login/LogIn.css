@@ -1,21 +1,43 @@
-.login-container{
+.login-container {
     display: flex;
     align-items: center;
-    /* background-color: #040220; */
 }
-.inputs{
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   margin-top: 20px;
-   gap: 8px;
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    gap: 8px;
 }
-.loginPage{
+
+.loginPage {
     background-color: #1a202c;
     padding-top: 40px;
     width: 100vw;
     height: 100vh;
 }
-.sp{
-    color:blue;
- }
+
+.sp {
+    color: blue;
+}
+
+
+@media only screen and (max-width: 767px) {
+    .login-container {
+        flex-direction: column; 
+    }
+
+    .inputs {
+        margin-top: 10px; 
+    }
+
+    .loginPage {
+        padding-top: 20px; 
+    }
+}
+
+
+@media only screen and (min-width: 768px) {
+    
+}
